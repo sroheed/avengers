@@ -26,18 +26,32 @@ nav a {
 }
 main {
     background-color: white;
-    display: flex;
+    display: block;
     padding: 2%;
 }
-main h2 {
+article {
+    display: block;
+    position: relative;
+}
+article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.clear {
+    display: none;
+}
+article h2 {
     font-family: Oswald;
     color: orange;
     font-size: 24px;
     display: inline-flex;
     align-items: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
 }
 
-main h2::before {
+article h2::before {
     content: "";
     display: inline-block;
     width: 40px;
@@ -47,15 +61,35 @@ main h2::before {
     mask: url('../img/mask-solid-full.svg') no-repeat center / contain;
     -webkit-mask: url('../img/mask-solid-full.svg') no-repeat center / contain;
 }
-
-main p {
+article img {
+    float: left;
+    width: 35%;
+    max-width: 320px;
+    margin: 0 20px 0 0;
+    height: auto;
+    display: block;
+}
+article p,
+article P {
     font-family: Oswald;
     color: black;
     font-size: 18px;
-    margin-top: 10px;
+    margin: 0 0 0.75rem;
 }
-article img {
-    
-    width: 30%;
-    height: auto;
+article a {
+    display: block;
+    margin-top: 0.5rem;
+    float: right;
+    width: 80px;
+    font-family: Oswald;
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    text-decoration: underline;
+}
+footer {
+    background-color: #f4e091;
+    text-align: center;
+    padding: 20px;
+    font-family: Oswald, sans-serif;
 }
